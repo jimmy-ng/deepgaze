@@ -33,7 +33,7 @@ class BinaryMaskAnalyser:
         mask = np.copy(mask) #doing a copy otherwise findContours modify the original(?)
         if(len(mask.shape) == 3):
             mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-        contours, hierarchy = cv2.findContours(mask, 1, 2)
+        _, contours, hierarchy = cv2.findContours(mask, 1, 2)
         if(hierarchy is None): return 0
         else: return len(hierarchy)
 
@@ -49,7 +49,7 @@ class BinaryMaskAnalyser:
         mask = np.copy(mask)
         if(len(mask.shape) == 3):
             mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-        contours, hierarchy = cv2.findContours(mask, 1, 2)
+        _, contours, hierarchy = cv2.findContours(mask, 1, 2)
         area_array = np.zeros(len(contours)) #contains the area of the contours
         counter = 0
         for cnt in contours:   
@@ -79,7 +79,7 @@ class BinaryMaskAnalyser:
         mask = np.copy(mask)
         if(len(mask.shape) == 3):
             mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-        contours, hierarchy = cv2.findContours(mask, 1, 2)
+        _, contours, hierarchy = cv2.findContours(mask, 1, 2)
         area_array = np.zeros(len(contours)) #contains the area of the contours
         counter = 0
         for cnt in contours:   
@@ -162,7 +162,7 @@ class BinaryMaskAnalyser:
         mask = np.copy(mask)
         if(len(mask.shape) == 3):
             mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-        contours, hierarchy = cv2.findContours(mask, 1, 2)
+        _, contours, hierarchy = cv2.findContours(mask, 1, 2)
         area_array = np.zeros(len(contours)) #contains the area of the contours
         counter = 0
         for cnt in contours:   
@@ -195,7 +195,7 @@ class BinaryMaskAnalyser:
         mask = np.copy(mask)
         if(len(mask.shape) == 3):
             mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
-        contours, hierarchy = cv2.findContours(mask, 1, 2)
+        _, contours, hierarchy = cv2.findContours(mask, 1, 2)
         area_array = np.zeros(len(contours)) #contains the area of the contours
         counter = 0
         for cnt in contours:   
